@@ -1,0 +1,198 @@
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio Tecnológico 2026 — RAITec</title>
+
+  <!-- Google Fonts: Inter & Instrument Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Leaflet CSS (Mapa Interativo) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!--  CSS  -->
+  <link rel="stylesheet" href="CSS/estilo_dtec.css" />
+  <link rel="icon" href="src/favicon_dtec.ico" type="image/x-icon">
+
+</head>
+<body>
+
+  <!-- FUNDO DE ESTRELAS / DECORATIVO -->
+  <div class="stars-overlay"></div>
+
+  <!-- CABEÇALHO / HERO SECTION -->
+  <header class="hero-section">
+    <h1 class="hero-title">PRONTOS PARA<br>UMA NOVA AVENTURA?</h1>
+    
+    
+      <!--<div class="hero-buttons">
+      <a href="#projetos" class="btn-outline">PROJETOS</a>
+      <a href="#competicoes" class="btn-outline">COMPETIÇÕES</a>
+      </div>-->
+
+    <div class="logo-dtec-container">
+      
+      <img src="src/Logo + Logotipo - Variação 02 2.png" alt="Desafio Tecnológico" class="logo-dtec" />
+    </div>
+
+    <div class="organizador-box">
+      <span class="sub-label">UMA ORGANIZAÇÃO</span>
+      <img src="src/NovaIdentidadeVisualRAITEC-11(1) 2.png" alt="RAITEC" class="logo-raitec" />
+      <span class="event-date">02 DE OUTUBRO 2026</span>
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <!-- SEÇÃO: O QUE É O DESAFIO -->
+    <section class="sobre-section">
+      <h2 class="section-title">O QUE É O DESAFIO TECNOLÓGICO?</h2>
+      <p class="section-desc">
+        O Desafio Tecnológico (DTec) é um evento anual, realizado pelo RAITec, que promove o desenvolvimento técnico e pessoal dos participantes por meio de competições, exposições de projetos, palestras e workshops. Conectamos pessoas e ideias a partir de atividades que desafiam a lógica, tecnologias inspiradoras e trocas de conversa. O evento é aberto ao público e gratuito, com foco em estudantes do ensino médio, graduandos e entusiastas.
+      </p>
+    </section>
+
+    <!-- SEÇÃO: LOCAL E MAPA DO EVENTO -->
+    <section class="local-section">
+      <h2 class="section-title">LOCAL E MAPA DO EVENTO</h2>
+      <h3 class="local-name">Seara da Ciência / Instituto Confúcio</h3>
+      <p class="local-address">Rua Dr. Abdenado Rocha Lima, s/n - Pici Fortaleza - CE</p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScLYS-lDuwkHntXZgd6mM-TPgWkpa7kljRFEz4Ju60wBMX0eg/viewform" class="btn-gradient">Confirmar presença</a>
+
+      <!-- CONTÊINER DO MAPA INTERATIVO (LEAFLET) -->
+      <div class="mapa-wrapper">
+        <!-- <div class="mapa-filtros"> -->
+          <!-- <button onclick="filtrarMapa('todos')">Todos</button> -->
+          <!-- <button onclick="filtrarMapa('estandes')">Estandes</button> -->
+          <!--  <button onclick="filtrarMapa('auditorios')">Auditórios</button> -->
+        <!-- </div>-->
+        <div id="mapa-interativo"></div>
+      </div>
+    </section>
+
+  <!-- SEÇÃO: PROGRAMAÇÃO -->
+      <section class="programacao-section">
+        <h2 class="section-title">PROGRAMAÇÃO</h2>
+        
+        <div class="tabela-prog">
+          <div class="prog-item">
+            <span class="prog-hora">08h00 - 12h00 </span>
+            <div class="prog-info">
+              <strong> Amostra de Projetos</strong>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">09h00 - 09h30 </span>
+            <div class="prog-info">
+              <strong> Abertura do Evento - Auditório</strong>
+              <p> </p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">09h30 - 11h00 </span>
+            <div class="prog-info">
+              <strong> Oficina: Monte o seu Robô Seguidor de Linha - Oficinas</strong>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">09h30 - 09h40 </span>
+            <div class="prog-info">
+              <strong> Ética e Cibersegurança na Era da IA - Auditório</strong>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">09h40 - 09h50 </span>
+            <div class="prog-info">
+              <strong> Tecnologia e Empreendedorismo em todas as Áreas - Auditório</strong>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">09h50 - 10h00 </span>
+            <div class="prog-info">
+              <strong> Criatividade e Tecnologia no Desenvolvimento de Jogos - Auditório</strong>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="prog-item">
+            <span class="prog-hora">10h00 - 10h10 </span>
+            <div class="prog-info">
+              <strong> Inteligência Emocional no Pré- Vestibular - Auditório</strong>
+              <p></p>
+            </div>
+          </div>
+          
+          <div class="prog-item">
+            <span class="prog-hora">10h10 - 11h00 </span>
+            <div class="prog-info">
+              <strong> Mesa Redonda: Mulheres em Ciência, Engenharia e Liderança - Auditório</strong>
+              <p></p>
+            </div>
+          </div>
+          
+          <div class="prog-item">
+            <span class="prog-hora">11h00 - 12h00 </span>
+            <div class="prog-info">
+              <strong> Caça ao Tesouro</strong>
+              <p></p>
+            </div>
+            
+          </div>
+          <div class="prog-item">
+            <span class="prog-hora">12h00 - 13h30 </span>
+            <div class="prog-info">
+              <strong> Intervalo</strong>
+              <p></p>
+            </div>
+          </div>
+          
+          <div class="prog-item">
+            <span class="prog-hora">13h30 - 17h00 </span>
+            <div class="prog-info">
+              <strong>  Competição de Robôs Seguidores de Linha - Oficinas</strong>
+              <p></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+  </main>
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img src="src/Identidade branca_sem fundo 1.png" alt="RAITEC" class="footer-logo" />
+    <p class="footer-copy">© 2026 RAITEC — Todos os direitos reservados.</p>
+    <p class="footer-contact">Contato: <a href="mailto:raitec@ufc.br">raitec@ufc.br</a></p>
+    
+    <div class="social-icons">
+      <a href="https://www.facebook.com/raitec.ufc/"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/school/raitec-ufc/"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/@raitecufc"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/raitec.ufc/"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <script src="js/js_dtec.js"></script>
+</body>
+</html>
