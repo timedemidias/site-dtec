@@ -285,7 +285,6 @@ body {
 /* TABELA DE PROGRAMAÇÃO */
 .tabela-prog {
   background: #1e1e1e45;
-  border: 2px solid rgba(242, 182, 4, 0.996);
   border-radius: 12px;
   overflow: hidden;
 }
