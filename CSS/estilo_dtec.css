@@ -7,14 +7,83 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(274.01deg, #E854C9 -93.12%, #0B001C 52.56%);
-  background-color: #0B001C;
+  background: #000;
+  background-color: #000;
   color: #FFFFFF;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+/* ESTRELAS FLUTUANTES */
+.stars-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; 
+  overflow: hidden;
+}
 
+.stars-overlay::before,
+.stars-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+/* Estrelas brancas pequenas */
+.stars-overlay::before {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+    6vw 8vh #fff, 14vw 32vh #fff, 22vw 12vh #fff, 31vw 58vh #fff,
+    38vw 22vh #fff, 47vw 80vh #fff, 55vw 6vh #fff, 62vw 44vh #fff,
+    70vw 70vh #fff, 78vw 18vh #fff, 85vw 52vh #fff, 93vw 90vh #fff,
+    10vw 66vh #fff, 26vw 88vh #fff, 42vw 40vh #fff, 58vw 94vh #fff,
+    74vw 36vh #fff, 90vw 10vh #fff, 4vw 48vh #fff, 98vw 62vh #fff;
+  animation: flutuar 9s ease-in-out infinite alternate,
+             brilhar 3s ease-in-out infinite;
+}
+
+/* Estrelas amarelas maiores*/
+.stars-overlay::after {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow:
+    9vw 20vh #f9d632, 19vw 74vh #f9d632, 29vw 36vh #f9d632,
+    44vw 14vh #f9d632, 52vw 62vh #f9d632, 66vw 28vh #f9d632,
+    76vw 84vh #f9d632, 88vw 40vh #f9d632, 96vw 24vh #f9d632,
+    35vw 96vh #f9d632, 81vw 4vh #f9d632, 3vw 82vh #f9d632;
+  animation: flutuar 13s ease-in-out infinite alternate-reverse,
+             brilhar 4.5s ease-in-out infinite 1s;
+}
+
+@keyframes flutuar {
+  from { transform: translateY(0) translateX(0); }
+  to   { transform: translateY(-30px) translateX(12px); }
+}
+
+@keyframes brilhar {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 1; }
+}
+
+/* Garante que o conteúdo fique por cima das estrelas */
+.hero-section, .main-content, .footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .stars-overlay::before,
+  .stars-overlay::after {
+    animation: none;
+  }
+}
 
 
 
@@ -30,12 +99,14 @@ body {
   max-width: 600px; 
   margin: 0 auto;
   padding: 30px 20px;
+  
 }
 
 /* HERO SECTION */
 .hero-section {
   text-align: center;
   padding-top: 40px;
+    padding-bottom: 0;
 }
 
 .hero-title {
@@ -72,12 +143,19 @@ body {
   color: #FFFFFF;
 }*/
 
-.logo-dtec-container img, .organizador-box img {
-  max-width: 80%;
+.logo-dtec-container img {
+  max-width: 90%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/*.organizador-box img {
+  max-width: 40%;
   height: auto;
   margin: 15px auto;
   display: block;
-}
+}*/
 
 .sub-label {
   display: block;
@@ -91,14 +169,14 @@ body {
   display: block;
   font-size: 22px;
   font-weight: 600;
-  color: #FFFFFF;
-  margin-top: 10px;
+  color: #ffffff;
+  margin: 5px;
 }
 
 .section-title {
   font-weight: 700;
-  font-size: 26px;
-  color: #7B2FF7;
+  font-size: 23px;
+  color: rgba(242, 182, 4, 0.996);
   margin-top: 40px;
   margin-bottom: 16px;
   line-height: 1.3;
@@ -106,7 +184,7 @@ body {
 
 .section-desc {
   font-weight: 500;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.5;
   color: #C5C5C5; 
 }
@@ -120,7 +198,7 @@ body {
 
 /* LOCAL E MAPA */
 .local-name {
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 8px;
@@ -128,7 +206,7 @@ body {
 
 .local-address {
   font-size: 16px;
-  color: #A0A0A0;
+  color: #c5c5c5;
   margin-bottom: 24px;
 }
 
@@ -139,19 +217,14 @@ body {
   margin: 0 auto 30px auto;
   text-align: center;
   padding: 16px 24px;
-  background: linear-gradient(90deg, #E854C9 0%, #7B2FF7 100%);
+  background: linear-gradient(80deg, #ffff 0%, rgba(242, 182, 4, 0.996) 100%);
   border-radius: 20px;
-  color: #FFFFFF;
+  color: #000;
   font-weight: 700;
   font-size: 20px;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(232, 84, 201, 0.3);
+  box-shadow: 0 8px 20px #fff;
 }
-
-
-
-
-
 
 
 
@@ -166,15 +239,16 @@ body {
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid #7B2FF7;
+  /*border: 2px solid rgba(242, 182, 4, 0.996);*/
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   margin-bottom: 40px;
-  background-color: #1E1E1E;
+  background-color: #ffff;
 }
 
 #mapa-interativo {
   width: 100%;
-  height: 360px; 
+  height: auto;
+  aspect-ratio: 1228 / 869;
 }
 
 .mapa-filtros {
@@ -182,7 +256,7 @@ body {
   top: 10px;
   left: 10px;
   z-index: 1000;
-  background: rgba(11, 0, 28, 0.85);
+  background: #0b001cd9;
   padding: 6px;
   border-radius: 8px;
   border: 1px solid #7B2FF7;
@@ -208,11 +282,10 @@ body {
 
 
 
-
 /* TABELA DE PROGRAMAÇÃO */
 .tabela-prog {
-  background: rgba(30, 30, 30, 0.27);
-  border: 2px solid #7B2FF7;
+  background: #1e1e1e45;
+  border: 2px solid rgba(242, 182, 4, 0.996);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -221,7 +294,7 @@ body {
   display: flex;
   align-items: flex-start;
   padding: 16px 12px; /* Reduzi as margens internas para ganhar espaço útil na tela */
-  border-bottom: 1px solid rgba(123, 47, 247, 0.3);
+  border-bottom: 1px solid #000;
   gap: 12px; /* Reduzi o espaço vazio entre a hora e o texto */
 }
 
@@ -232,7 +305,7 @@ body {
 .prog-hora {
   font-weight: 700;
   font-size: 13.5px; /* Fonte ligeiramente menor para o horário */
-  color: #E854C9;
+  color: rgba(242, 182, 4, 0.996);
   min-width: 100px; /* Reduzi drasticamente a largura da coluna de horário */
   flex-shrink: 0;
 }
@@ -270,11 +343,11 @@ body {
 
 /* RODAPE */
 .footer {
-  background: #0B001C;
+  background: #000;
   text-align: center;
   padding: 40px 20px;
   margin-top: 60px;
-  border-top: 1px solid rgba(232, 84, 201, 0.3);
+  border-top: 1px solid rgba(242, 182, 4, 0.996);
 }
 
 .footer-logo {
@@ -290,7 +363,7 @@ body {
 }
 
 .footer-contact a {
-  color: #E854C9;
+  color:rgba(242, 182, 4, 0.996);
   text-decoration: none;
 }
 
@@ -313,5 +386,5 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  border: 1px solid #828282;
+  border: 1px solid rgba(242, 182, 4, 0.996);
 }
