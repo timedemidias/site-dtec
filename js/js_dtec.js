@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var bounds = [[0, 0], [h, w]];
 
   // ATENÇÃO: para mudar a imagem do "mapa" é só colocar o caminho dentro das aspas: L.imageOverlay('...', bounds)
-  // Exemplo: 'planta-oficial-dtec.png'
+  // Exemplo: 'planta-oficial-dtec.png' Mapa_Evento_DTEc_2026_v02_terreo.png
 
   var image = L.imageOverlay('src/Mapa_Evento_DTEc_2026_v02_terreo.png', bounds).addTo(map);
   map.fitBounds(bounds);
